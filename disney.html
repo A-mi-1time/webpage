@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ディズニーまとめ</title>
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --ink: #202536;
+      --muted: #667085;
+      --blue: #1d4ed8;
+      --gold: #f5b640;
+      --pink: #e85d9e;
+      --card: #ffffff;
+      --line: #dde3ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      min-height: 72vh;
+      display: grid;
+      align-items: end;
+      padding: 32px 20px;
+      background:
+        radial-gradient(circle at 18% 22%, rgb(245 182 64 / 32%) 0 7rem, transparent 7.1rem),
+        radial-gradient(circle at 82% 18%, rgb(232 93 158 / 24%) 0 6rem, transparent 6.1rem),
+        linear-gradient(135deg, #10215f 0%, #1d4ed8 46%, #8ec5ff 100%);
+      color: #ffffff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 150px;
+      background:
+        linear-gradient(135deg, transparent 0 35%, #f7f8fc 35% 100%),
+        linear-gradient(45deg, transparent 0 52%, rgb(255 255 255 / 22%) 52% 100%);
+    }
+
+    .hero {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 72px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #fff4c9;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(2.4rem, 8vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 20px 0 0;
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      color: #edf4ff;
+    }
+
+    main {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+      padding: 44px 20px 64px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 44px;
+    }
+
+    .note {
+      padding: 22px;
+      background: #fff8e5;
+      border: 1px solid #f3d28a;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 230px;
+      padding: 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 14px 30px rgb(32 37 54 / 8%);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eaf1ff;
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 48px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      padding: 18px 20px;
+      background: #ffffff;
+      border-left: 5px solid var(--pink);
+      border-radius: 8px;
+      box-shadow: 0 10px 24px rgb(32 37 54 / 7%);
+    }
+
+    .year {
+      display: block;
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 28px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .intro,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: 64vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <p class="eyebrow">Movies, Parks, Music and Stories</p>
+      <h1>ディズニーの魅力をまとめるページ</h1>
+      <p class="lead">
+        映画、テーマパーク、音楽、キャラクターなど、ディズニーの世界をわかりやすく紹介します。
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="overview-title">
+      <div>
+        <h2 id="overview-title">ディズニーとは</h2>
+        <p>
+          ディズニーは、アニメーション映画から始まり、実写映画、テーマパーク、音楽、
+          グッズ、配信作品へと広がってきたエンターテインメントのブランドです。
+          世代をこえて楽しめる物語と、細部まで作り込まれた世界観が大きな特徴です。
+        </p>
+      </div>
+      <aside class="note">
+        <h3>このページのテーマ</h3>
+        <p class="muted">
+          代表的な映画、パークで楽しめる体験、音楽の魅力を短く整理しています。
+        </p>
+      </aside>
+    </section>
+
+    <section aria-labelledby="topics-title">
+      <h2 id="topics-title">主なジャンル</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">映画</span>
+          <h3>物語とキャラクター</h3>
+          <p>
+            プリンセス作品、冒険作品、ファンタジー作品など、印象に残るキャラクターと
+            わかりやすいストーリーが多くの人に親しまれています。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">パーク</span>
+          <h3>世界観を体験する場所</h3>
+          <p>
+            アトラクション、ショー、パレード、レストランなどを通して、
+            映画や物語の中に入ったような体験ができます。
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="tag">音楽</span>
+          <h3>記憶に残る名曲</h3>
+          <p>
+            映画の主題歌やパークのショー音楽は、作品の感動や楽しい気持ちを
+            強く印象づける大切な要素です。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="parks-title">
+      <h2 id="parks-title">パークで楽しめること</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>アトラクション</h3>
+          <p>スリル系、ゆったり楽しむライド、映画の世界を再現した体験型アトラクションがあります。</p>
+        </article>
+        <article class="card">
+          <h3>パレードとショー</h3>
+          <p>キャラクター、音楽、ダンス、照明が組み合わさり、パークならではの特別感を味わえます。</p>
+        </article>
+        <article class="card">
+          <h3>フードとグッズ</h3>
+          <p>季節限定メニューやキャラクターモチーフのグッズも、思い出づくりの楽しみのひとつです。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="history-title">
+      <h2 id="history-title">簡単な歴史</h2>
+      <ul class="timeline">
+        <li>
+          <span class="year">1928年</span>
+          ミッキーマウスが登場し、ディズニーを代表するキャラクターになりました。
+        </li>
+        <li>
+          <span class="year">1937年</span>
+          長編アニメーション映画『白雪姫』が公開され、映画史に大きな足跡を残しました。
+        </li>
+        <li>
+          <span class="year">1955年</span>
+          アメリカにディズニーランドが開園し、物語を体験できる場所として人気を集めました。
+        </li>
+        <li>
+          <span class="year">1983年</span>
+          東京ディズニーランドが開園し、日本でもディズニーパークを楽しめるようになりました。
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>このページは学習用に作成した非公式の紹介ページです。</p>
+  </footer>
+</body>
+</html>
