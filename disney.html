@@ -6,7 +6,7 @@
   <title>ディズニーまとめ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Emilys+Candy&family=Kaisei+Decol:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kosugi+Maru&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f7f8fc;
@@ -27,7 +27,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: "Kaisei Decol", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Zen Maru Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.7;
     }
 
@@ -37,10 +37,11 @@
       align-items: end;
       padding: 32px 20px;
       background:
-        radial-gradient(circle at 18% 22%, rgb(245 182 64 / 32%) 0 7rem, transparent 7.1rem),
-        radial-gradient(circle at 82% 18%, rgb(232 93 158 / 24%) 0 6rem, transparent 6.1rem),
-        linear-gradient(135deg, #10215f 0%, #1d4ed8 46%, #8ec5ff 100%);
-      color: #ffffff;
+        radial-gradient(circle at 16% 20%, rgb(255 255 255 / 72%) 0 5.8rem, transparent 5.9rem),
+        radial-gradient(circle at 82% 18%, rgb(255 231 122 / 44%) 0 6.4rem, transparent 6.5rem),
+        radial-gradient(circle at 72% 62%, rgb(255 142 190 / 34%) 0 8.2rem, transparent 8.3rem),
+        linear-gradient(135deg, #ffd6e8 0%, #fff2b8 48%, #c9f0e4 100%);
+      color: #5d3152;
       overflow: hidden;
       position: relative;
     }
@@ -54,7 +55,7 @@
       height: 150px;
       background:
         linear-gradient(135deg, transparent 0 35%, #f7f8fc 35% 100%),
-        linear-gradient(45deg, transparent 0 52%, rgb(255 255 255 / 22%) 52% 100%);
+        linear-gradient(45deg, transparent 0 52%, rgb(255 137 183 / 18%) 52% 100%);
     }
 
     .sparkles {
@@ -68,8 +69,8 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 18px #fff4c9;
+      background: #fff7bd;
+      box-shadow: 0 0 18px #ff75b7;
       opacity: 0;
       animation: sparkle 4.8s ease-in-out infinite;
     }
@@ -115,7 +116,7 @@
 
     .eyebrow {
       margin: 0 0 12px;
-      color: #fff4c9;
+      color: #8d356b;
       font-weight: 700;
     }
 
@@ -123,16 +124,23 @@
       max-width: 820px;
       margin: 0;
       font-size: clamp(2.4rem, 8vw, 5.5rem);
-      font-family: "Emilys Candy", "Kaisei Decol", cursive;
+      font-family: "Hachi Maru Pop", "Zen Maru Gothic", cursive;
       line-height: 1.05;
       letter-spacing: 0;
+      color: #ff5b9f;
+      text-shadow:
+        0 3px 0 #ffffff,
+        0 6px 0 #ffd85f,
+        0 14px 24px rgb(141 53 107 / 24%);
+      -webkit-text-stroke: 1px rgb(255 255 255 / 88%);
+      filter: drop-shadow(0 0 16px rgb(255 255 255 / 58%));
     }
 
     .lead {
       max-width: 680px;
       margin: 20px 0 0;
       font-size: clamp(1rem, 2.4vw, 1.25rem);
-      color: #edf4ff;
+      color: #653958;
     }
 
     main {
@@ -161,14 +169,14 @@
     h2 {
       margin: 0 0 16px;
       font-size: clamp(1.5rem, 3vw, 2rem);
-      font-family: "Kaisei Decol", system-ui, sans-serif;
+      font-family: "Kosugi Maru", "Zen Maru Gothic", system-ui, sans-serif;
       letter-spacing: 0;
     }
 
     h3 {
       margin: 0 0 8px;
       font-size: 1.1rem;
-      font-family: "Kaisei Decol", system-ui, sans-serif;
+      font-family: "Kosugi Maru", "Zen Maru Gothic", system-ui, sans-serif;
     }
 
     p {
@@ -230,6 +238,16 @@
       border-radius: 8px;
       box-shadow: 0 10px 22px rgb(32 37 54 / 7%);
       animation: fade-up 650ms ease-out both;
+    }
+
+    .mini-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #ffe8f4;
     }
 
     .mini-card h3 {
@@ -294,6 +312,36 @@
 
     .photo-card .content {
       padding: 22px;
+    }
+
+    #movie-synopsis-title + .synopsis-card {
+      margin-top: 0;
+    }
+
+    [aria-labelledby="movie-synopsis-title"] .synopsis-card + .synopsis-card {
+      margin-top: 18px;
+    }
+
+    .synopsis-card {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .synopsis-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin: 0;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #d9dee8;
+    }
+
+    .synopsis-content p {
+      max-width: 68ch;
     }
 
     .credit {
@@ -466,6 +514,7 @@
       align-items: center;
       gap: 10px;
       margin-top: 14px;
+      margin-right: 10px;
       padding: 10px 14px;
       border-radius: 999px;
       background: var(--blue);
@@ -575,6 +624,14 @@
         grid-template-columns: 1fr;
       }
 
+      .synopsis-card {
+        grid-template-columns: 1fr;
+      }
+
+      .synopsis-image {
+        max-width: 420px;
+      }
+
       .mini-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -637,13 +694,6 @@
             プリンセス作品、冒険作品、ファンタジー作品など、印象に残るキャラクターと
             わかりやすいストーリーが多くの人に親しまれています。
           </p>
-          <div class="movie-note">
-            <strong>『アナと雪の女王』のあらすじ</strong>
-            <p>
-              雪と氷の力を持つ姉エルサと、姉を信じて追いかける妹アナの物語です。
-              閉ざされた王国を救うため、姉妹の絆と本当の愛の意味が描かれます。
-            </p>
-          </div>
         </article>
 
         <article class="card">
@@ -661,6 +711,102 @@
           <p>
             映画の主題歌やパークのショー音楽は、作品の感動や楽しい気持ちを
             強く印象づける大切な要素です。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="movie-synopsis-title">
+      <h2 id="movie-synopsis-title">ディズニー映画のあらすじ</h2>
+      <div class="card synopsis-card">
+        <img
+          class="synopsis-image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB-lK0vf0PPn8ATIQ_3siHFK6DMXfoIkm72_siY0CaUg&s=10"
+          alt="アナと雪の女王のイラスト"
+        >
+        <div class="synopsis-content">
+          <span class="tag">アナと雪の女王</span>
+          <h3>姉妹の絆と本当の愛の物語</h3>
+          <p>
+            アレンデール王国の王女エルサは、雪と氷を生み出す不思議な力を持っています。
+            幼いころの出来事をきっかけに力を隠して生きてきましたが、戴冠式の日に感情があふれ、
+            王国を冬に閉ざしてしまいます。妹のアナは、姉を信じて山奥へ向かい、
+            クリストフやオラフと出会いながらエルサを連れ戻そうとします。
+            物語では、姉妹のすれ違い、孤独、勇気、そして本当の愛の意味が描かれます。
+          </p>
+        </div>
+      </div>
+      <div class="card synopsis-card">
+        <img
+          class="synopsis-image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6zkk-1DFB2_eNHkMo0YRc3mhe7kpuAUs6RcqOch-91w&s=10"
+          alt="塔の上のラプンツェルのイラスト"
+        >
+        <div class="synopsis-content">
+          <span class="tag">塔の上のラプンツェル</span>
+          <h3>外の世界へ踏み出す冒険の物語</h3>
+          <p>
+            ラプンツェルは、長く美しい魔法の髪を持つ少女で、森の奥にある高い塔の中で暮らしています。
+            毎年自分の誕生日に空へ上がるたくさんの光を見て、その正体を知りたいと願っていました。
+            ある日、塔に逃げ込んできたフリン・ライダーと出会い、外の世界へ出る決心をします。
+            初めて見る町や人々、夢のようなランタンの景色を通して、ラプンツェルは自分の過去と向き合い、
+            本当に大切なものや自分らしく生きる勇気を見つけていきます。
+          </p>
+        </div>
+      </div>
+      <div class="card synopsis-card">
+        <img
+          class="synopsis-image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkxDdLbEiVFfEk1EC4xoHgl4ToGLH_pasRMlmcdy1zA&s=10"
+          alt="ベイマックスのイラスト"
+        >
+        <div class="synopsis-content">
+          <span class="tag">ベイマックス</span>
+          <h3>心と体を守るケアロボットの物語</h3>
+          <p>
+            発明が得意な少年ヒロは、兄タダシが作ったケアロボットのベイマックスと出会います。
+            大切な人を失った悲しみを抱えるヒロは、ある事件の真相を追う中で、
+            ベイマックスや仲間たちとともに立ち上がっていきます。
+            やさしさを目的に作られたベイマックスの存在を通して、
+            復讐ではなく人を助けることの大切さや、悲しみから前に進む強さが描かれます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="recommend-title">
+      <h2 id="recommend-title">☆作者のおすすめ</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">映画</span>
+          <h3>アナと雪の女王</h3>
+          <p>
+            ディズニーシーのアトラクションに乗ろうと思っている人は、ぜひ映画も見てください。
+            映画を見たうえでアトラクションに乗ると、キャラクターの動きやセットなど、
+            よりアトラクションの面白さがわかると思います。
+          </p>
+          <p class="movie-note">
+            ディズニープリンセスで多く描かれてきた男女間の恋愛ではなく、
+            姉妹愛という新しいコンセプトが最高な作品です。
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">アトラクション</span>
+          <h3>タワー・オブ・テラー</h3>
+          <p>
+            アトラクションが怖くて乗れない方も、よければバックグラウンドストーリー
+            （通称BGS）だけでも調べて読んでみてください。すごく凝られている名作です。
+          </p>
+          <p class="movie-note">
+            私自身、絶叫は苦手でアトラクションは乗れないのですが、このお話がすごく好きです。
+            特にホラーが好きな人は、ぜひ読んでみてください！
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">キャラクター</span>
+          <h3>ダッフィー＆フレンズ</h3>
+          <p>
+            やさしい雰囲気のキャラクターが多く、グッズや写真を楽しみたい人にぴったりです。
           </p>
         </article>
       </div>
@@ -745,7 +891,7 @@
             alt="東京ディズニーシーのタワー・オブ・テラー"
           >
           <div class="content">
-            <span class="tag">東京ディズニーシー</span>
+            <span class="tag">アトラクション</span>
             <h3>タワー・オブ・テラー</h3>
             <p>
               かつて豪華ホテルだった「ホテルハイタワー」は、オーナーのハリソン・ハイタワー三世が謎の失踪を遂げたことで閉鎖されました。
@@ -831,7 +977,7 @@
             <span class="tag">キャラクター</span>
             <h3>ミッキー＆フレンズ</h3>
             <p>
-              ミッキーマウスを中心に、ミニー、ドナルド、デイジー、グーフィー、プルートなどがそろう代表的な仲間たちです。
+              ミッキーマウスを中心に、ミニー、ドナルド、デイジー、グーフィー、プルート、チップとデールなどがそろう代表的な仲間たちです。
               明るく親しみやすいキャラクターが多く、パレードやグリーティングで会える定番の存在です。
             </p>
             <p class="movie-note">
@@ -845,6 +991,7 @@
               <a href="#daisy">デイジー</a>
               <a href="#goofy">グーフィー</a>
               <a href="#pluto">プルート</a>
+              <a href="#chip-dale">チップとデール</a>
             </nav>
             <p class="credit">
               Photo:
@@ -896,54 +1043,72 @@
       <h2 id="character-detail-title">キャラクター個別紹介</h2>
       <div class="mini-grid">
         <article class="mini-card" id="mickey">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12511_12483_12461_12540_12510_1_1cac8481.jpeg?region=0,0,800,800" alt="ミッキーマウスの写真">
           <h3>ミッキー</h3>
           <p>前向きでリーダーシップのある、ディズニーを代表するキャラクターです。</p>
         </article>
         <article class="mini-card" id="minnie">
+          <img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12511_12491_12540_12510_12454_1_094c88a1.jpeg" alt="ミニーマウスの写真">
           <h3>ミニー</h3>
           <p>おしゃれでやさしく、リボンやドット柄のスタイルが印象的です。</p>
         </article>
         <article class="mini-card" id="donald">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl4Oy5gvx8thlQ22SocKDeXd7XODpYi-zE4RYjmZ8-Zg&s=10" alt="ドナルドダックの写真">
           <h3>ドナルド</h3>
           <p>短気だけれど憎めない性格で、にぎやかなリアクションが魅力です。</p>
         </article>
         <article class="mini-card" id="daisy">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr20ErJNx2K_hLum4oDIgtJGQrsn43D8Z8OGInfKBYFg&s=10" alt="デイジーダックの写真">
           <h3>デイジー</h3>
           <p>華やかで自信があり、ドナルドのガールフレンドとしても知られています。</p>
         </article>
         <article class="mini-card" id="goofy">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkpxK0TtsjyUOWn0LXLOuVetS2QW1T7lX-Pa4IzgMKSA&s=10" alt="グーフィーの写真">
           <h3>グーフィー</h3>
           <p>のんびりしていて少しおっちょこちょいな、明るい友だちです。</p>
         </article>
         <article class="mini-card" id="pluto">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFRaT6SX48mgSXt3wSLytMHG0IMdljNAIAIZsDac6_w&s=10" alt="プルートの写真">
           <h3>プルート</h3>
           <p>ミッキーの愛犬。言葉を話さず、表情や動きで気持ちを伝えます。</p>
         </article>
+        <article class="mini-card" id="chip-dale">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd9lwXo_py0ooZpBa4btrSDpxaBkCXnh8x8sDW4dtEQX8w5u5a288VONttsSwWKNECi-8xGXD8ijlw71w1lFlJWVwZVLLPQT3eZN7UrGcv&s=10" alt="チップとデールの写真">
+          <h3>チップとデール</h3>
+          <p>いたずら好きなシマリスのコンビ。チップはしっかり者、デールは陽気でおちゃめな性格です。</p>
+        </article>
         <article class="mini-card" id="duffy">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQltv2IOHL9gHXZEGZrU36bXQXm56ZbF8VuAptUscpFoQ&s=10" alt="ダッフィーの写真">
           <h3>ダッフィー</h3>
           <p>ミニーがミッキーのために作ったテディベア。旅のおともとして親しまれています。</p>
         </article>
         <article class="mini-card" id="shelliemay">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyH9dsdXmwOmwggDvQFvo9TVXTBqQd8CeX3l5y5eZzYg&s=10" alt="シェリーメイの写真">
           <h3>シェリーメイ</h3>
           <p>ミニーが作った女の子のテディベア。ダッフィーの大切な友だちです。</p>
         </article>
         <article class="mini-card" id="gelatoni">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFAPvAR80QJX45kDq8ZZUiIMidBnSuAkzNekWtt2v92A&s=10" alt="ジェラトーニの写真">
           <h3>ジェラトーニ</h3>
           <p>絵を描くことが好きなネコの男の子。アートで気持ちを表現します。</p>
         </article>
         <article class="mini-card" id="stellalou">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2-TZldo6L-znWnkNTSL1Lqi-MnnNgBBfwp7EB-gyp4A&s=10" alt="ステラ・ルーの写真">
           <h3>ステラ・ルー</h3>
           <p>ダンサーを夢見るうさぎの女の子。努力家で夢に向かって進みます。</p>
         </article>
         <article class="mini-card" id="cookieann">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UK2qJEjK3J4gjVzLs_HeBgCvxVCwJyPrTiZsAERzjw&s=10" alt="クッキー・アンの写真">
           <h3>クッキー・アン</h3>
           <p>料理やアイデア作りが得意な犬の女の子。楽しい発想が魅力です。</p>
         </article>
         <article class="mini-card" id="olumel">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXDANXLyQmLB3DVgDG0GDHrpIfTjJkMmglLn2VhaD1A&s=10" alt="オル・メルの写真">
           <h3>オル・メル</h3>
           <p>音楽が好きなカメの男の子。ウクレレで明るい気分を届けます。</p>
         </article>
         <article class="mini-card" id="linabell">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCHl7Yvz0srCXL1ChV3kvHMC0YTtoHP9gTX3eJfvA8KA&s=10" alt="リーナ・ベルの写真">
           <h3>リーナ・ベル</h3>
           <p>謎を解くのが得意なキツネの女の子。虫めがねを持った探偵のような存在です。</p>
         </article>
@@ -982,6 +1147,9 @@
         </p>
         <a class="official-link" href="https://www.disney.co.jp/" target="_blank" rel="noopener noreferrer">
           Disney.jpを開く
+        </a>
+        <a class="official-link" href="https://www.tokyodisneyresort.jp/" target="_blank" rel="noopener noreferrer">
+          東京ディズニーリゾート公式サイトを開く
         </a>
       </div>
     </section>
