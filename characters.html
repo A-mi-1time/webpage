@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>キャラクター個別紹介</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kosugi+Maru&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8fc;
+      --ink: #202536;
+      --muted: #667085;
+      --blue: #1d4ed8;
+      --gold: #f5b640;
+      --pink: #e85d9e;
+      --line: #dde3ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Zen Maru Gothic", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 56px 20px 34px;
+      background:
+        radial-gradient(circle at 18% 20%, rgb(255 255 255 / 72%) 0 5.5rem, transparent 5.6rem),
+        radial-gradient(circle at 82% 18%, rgb(255 231 122 / 42%) 0 6rem, transparent 6.1rem),
+        linear-gradient(135deg, #ffd6e8 0%, #fff2b8 48%, #c9f0e4 100%);
+      color: #5d3152;
+    }
+
+    .hero,
+    main {
+      width: min(100%, 1040px);
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 22px;
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.1rem, 7vw, 4.4rem);
+      font-family: "Hachi Maru Pop", "Zen Maru Gothic", cursive;
+      line-height: 1.1;
+      letter-spacing: 0;
+      color: #ff5b9f;
+      text-shadow: 0 3px 0 #ffffff, 0 6px 0 #ffd85f, 0 14px 24px rgb(141 53 107 / 22%);
+      -webkit-text-stroke: 1px rgb(255 255 255 / 88%);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: #653958;
+      font-size: clamp(1rem, 2.3vw, 1.18rem);
+    }
+
+    main {
+      padding: 34px 20px 64px;
+    }
+
+    .series {
+      margin-top: 42px;
+    }
+
+    .series:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-family: "Kosugi Maru", "Zen Maru Gothic", system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .character-rail {
+      display: flex;
+      gap: 18px;
+      margin: 0 -20px;
+      padding: 4px 20px 22px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-padding-inline: 20px;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: #b9c7e6 transparent;
+    }
+
+    .character-item {
+      width: min(78vw, 300px);
+      min-width: min(78vw, 300px);
+      scroll-snap-align: start;
+      transition: transform 180ms ease;
+    }
+
+    .character-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 28% 24%, rgb(255 255 255 / 76%) 0 18%, transparent 19%),
+        linear-gradient(135deg, #ffe8f4 0%, #eaf1ff 52%, #fff2b8 100%);
+      box-shadow: 0 14px 30px rgb(32 37 54 / 12%);
+      color: #5d3152;
+      font-family: "Hachi Maru Pop", "Zen Maru Gothic", cursive;
+      font-size: clamp(2rem, 9vw, 4rem);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 1.1rem;
+      font-family: "Kosugi Maru", "Zen Maru Gothic", system-ui, sans-serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (min-width: 900px) {
+      .character-item {
+        width: 280px;
+        min-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <a class="back-link" href="disney.html">ディズニーまとめへ戻る</a>
+      <h1>キャラクター個別紹介</h1>
+      <p class="lead">
+        シリーズごとにキャラクターを分けて紹介しています。各シリーズの中は横にスクロールして見ることができます。
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="series" aria-labelledby="mickey-friends-title">
+      <h2 id="mickey-friends-title">ミッキー＆フレンズ</h2>
+      <div class="character-rail">
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12511_12483_12461_12540_12510_1_1cac8481.jpeg?region=0,0,800,800" alt="ミッキーマウスの写真"></div>
+          <h3>ミッキー</h3>
+          <p>前向きでリーダーシップのある、ディズニーを代表するキャラクターです。仲間を大切にしながら楽しいことへ進んでいく姿が印象的です。</p>
+        </article>
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12511_12491_12540_12510_12454_1_094c88a1.jpeg" alt="ミニーマウスの写真"></div>
+          <h3>ミニー</h3>
+          <p>おしゃれでやさしく、リボンやドット柄のスタイルが印象的です。明るく上品な雰囲気があり、歌やダンスもよく似合います。</p>
+        </article>
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12489_12490_12523_12489_12480_1_c28bb0a4.jpeg?region=0%2C0%2C800%2C800" alt="ドナルドダックの写真"></div>
+          <h3>ドナルド</h3>
+          <p>短気だけれど憎めない性格で、にぎやかなリアクションが魅力です。一生懸命で家族や仲間思いなところも愛されています。</p>
+        </article>
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12487_12452_12472_12540_12480_1_7dde0fef.jpeg?region=0%2C0%2C800%2C800" alt="デイジーダックの写真"></div>
+          <h3>デイジー</h3>
+          <p>華やかで自信があり、ドナルドのガールフレンドとしても知られています。かわいらしさとしっかりした雰囲気を持っています。</p>
+        </article>
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12464_12540_12501_12451_12540_07f01e09.jpeg?region=0%2C0%2C800%2C800" alt="グーフィーの写真"></div>
+          <h3>グーフィー</h3>
+          <p>のんびりしていて少しおっちょこちょいな、明るい友だちです。失敗してもどこか楽しそうで、周りをほっとさせます。</p>
+        </article>
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12503_12523_12540_12488_2225191d.jpeg?region=0%2C0%2C800%2C800" alt="プルートの写真"></div>
+          <h3>プルート</h3>
+          <p>ミッキーの愛犬。言葉を話さず、表情や動きで気持ちを伝えます。元気で素直なペットらしい魅力があります。</p>
+        </article>
+        <article class="character-item">
+          <div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12481_12483_12503_12487_12540_1_263f559f.jpeg?region=0%2C0%2C800%2C800" alt="チップとデールの写真"></div>
+          <h3>チップとデール</h3>
+          <p>いたずら好きなコンビ。チップはしっかり者、デールは陽気でおちゃめな性格です。二人のやりとりが楽しい存在です。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="duffy-friends-title">
+      <h2 id="duffy-friends-title">ダッフィー＆フレンズ</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQltv2IOHL9gHXZEGZrU36bXQXm56ZbF8VuAptUscpFoQ&s=10" alt="ダッフィーの写真"></div><h3>ダッフィー</h3><p>ミニーがミッキーのために作ったテディベア。旅のおともとして親しまれ、やさしい表情と温かい物語が魅力です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyH9dsdXmwOmwggDvQFvo9TVXTBqQd8CeX3l5y5eZzYg&s=10" alt="シェリーメイの写真"></div><h3>シェリーメイ</h3><p>ミニーが作った女の子のテディベア。リボンやかわいらしい服がよく似合い、やわらかく優しい雰囲気を持っています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFAPvAR80QJX45kDq8ZZUiIMidBnSuAkzNekWtt2v92A&s=10" alt="ジェラトーニの写真"></div><h3>ジェラトーニ</h3><p>絵を描くことが好きなネコの男の子。自由な発想で気持ちを表現する、クリエイティブで好奇心いっぱいのキャラクターです。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2-TZldo6L-znWnkNTSL1Lqi-MnnNgBBfwp7EB-gyp4A&s=10" alt="ステラ・ルーの写真"></div><h3>ステラ・ルー</h3><p>ダンサーを夢見る女の子。目標に向かって練習を続ける前向きさがあり、応援したくなる魅力があります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UK2qJEjK3J4gjVzLs_HeBgCvxVCwJyPrTiZsAERzjw&s=10" alt="クッキー・アンの写真"></div><h3>クッキー・アン</h3><p>料理やアイデア作りが得意な犬の女の子。いろいろなものを組み合わせて新しい楽しさを生み出します。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXDANXLyQmLB3DVgDG0GDHrpIfTjJkMmglLn2VhaD1A&s=10" alt="オル・メルの写真"></div><h3>オル・メル</h3><p>音楽が好きなカメの男の子。ウクレレで明るい気分を届ける、ゆったりした南国らしい雰囲気のキャラクターです。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCHl7Yvz0srCXL1ChV3kvHMC0YTtoHP9gTX3eJfvA8KA&s=10" alt="リーナ・ベルの写真"></div><h3>リーナ・ベル</h3><p>謎を解くのが得意な女の子。虫めがねを持った探偵のような存在で、知的で元気なところが人気です。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="princess-title">
+      <h2 id="princess-title">シンデレラ</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/cinderella_fc_cinderella_t_2e79b61f.jpeg?region=0%2C0%2C600%2C600" alt="シンデレラの写真"></div><h3>シンデレラ</h3><p>つらい毎日の中でも希望を失わず、やさしさを大切にする主人公です。舞踏会へ向かう姿は、夢を信じる物語を象徴しています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/charming_fc_cinderella_t_be0787b1.jpeg?region=0%2C0%2C600%2C600" alt="プリンス・チャーミングの写真"></div><h3>プリンス・チャーミング</h3><p>舞踏会でシンデレラと出会う王子です。短い出会いの中で彼女に強く心をひかれ、ガラスの靴を手がかりに探します。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/fairy-godmother_fc_cinderella_t_771b22b2.jpeg?region=0%2C0%2C600%2C600" alt="フェアリー・ゴッドマザーの写真"></div><h3>フェアリー・ゴッドマザー</h3><p>シンデレラを助ける魔法使いです。かぼちゃの馬車や美しいドレスを用意し、夢へ踏み出すきっかけをくれます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/tremaine_fc_cinderella_t_d5ded590.jpeg?region=0%2C0%2C600%2C600" alt="トレメイン夫人の写真"></div><h3>トレメイン夫人</h3><p>シンデレラの継母です。冷たく厳しい存在で、シンデレラを家に閉じ込めようとする物語の大きな障害になります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/drizella-anastasia_fc_cinderella_t_43f91720.jpeg?region=0%2C0%2C600%2C600" alt="アナスタシアの写真"></div><h3>アナスタシア</h3><p>シンデレラの義理の姉の一人です。わがままな面がありますが、作品によっては少しずつ違う一面も描かれます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/drizella-anastasia_fc_cinderella_t_43f91720.jpeg?region=0%2C0%2C600%2C600" alt="ドリゼラの写真"></div><h3>ドリゼラ</h3><p>シンデレラのもう一人の義理の姉です。アナスタシアと一緒に、シンデレラに厳しく接する場面が多いキャラクターです。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/jaq-gus_fc_cinderella_t_996c39ff.jpeg?region=0%2C0%2C600%2C600" alt="ジャックの写真"></div><h3>ジャック</h3><p>シンデレラを助ける小さなネズミです。勇気があり、仲間と協力してドレス作りや救出に力を貸します。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/jaq-gus_fc_cinderella_t_996c39ff.jpeg?region=0%2C0%2C600%2C600" alt="ガスの写真"></div><h3>ガス</h3><p>食いしんぼうでおっとりしたネズミです。少し不器用ですが、シンデレラのために一生懸命動く姿がかわいい存在です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/lucifer_fc_cinderella_t_994c3ff4.jpeg?region=0%2C0%2C600%2C600" alt="ルシファーの写真"></div><h3>ルシファー</h3><p>トレメイン夫人の飼い猫です。ネズミたちを追いかけ、シンデレラの味方にとってやっかいな存在として登場します。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="beauty-title">
+      <h2 id="beauty-title">美女と野獣</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/belle_beauty-and-the-beast_t_faf7f078.jpeg?region=0%2C0%2C600%2C600" alt="ベルの写真"></div><h3>ベル</h3><p>本が好きで知的な主人公です。見た目だけで判断せず、相手の心を見ようとする強さとやさしさを持っています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/beast_beauty-and-the-beast_t_790939a5.jpeg?region=0%2C0%2C600%2C600" alt="野獣の写真"></div><h3>野獣</h3><p>魔法によって姿を変えられた王子です。不器用で怒りっぽい一面がありますが、ベルとの出会いで少しずつ心を開いていきます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/lumiere_beauty-and-the-beast_t_416a70da.jpeg?region=0%2C0%2C600%2C600" alt="ルミエールの写真"></div><h3>ルミエール</h3><p>ろうそくの姿をした城の召使いです。陽気でおもてなし上手な性格で、暗い城に明るい雰囲気を運んでくれます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/cogsworth_beauty-and-the-beast_t_0f4a144c.jpeg?region=0%2C0%2C600%2C600" alt="コグスワースの写真"></div><h3>コグスワース</h3><p>置き時計の姿になった召使いです。まじめで心配性ですが、城の仲間たちをまとめようとする責任感があります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/potts-chip_beauty-and-the-beast_t_29a95470.jpeg?region=0%2C0%2C600%2C600" alt="ポット夫人の写真"></div><h3>ポット夫人</h3><p>ティーポットの姿になったやさしい召使いです。ベルを温かく迎え、城の中で母親のような安心感を与えます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/potts-chip_beauty-and-the-beast_t_29a95470.jpeg?region=0%2C0%2C600%2C600" alt="チップの写真"></div><h3>チップ</h3><p>ポット夫人の子どもで、ティーカップの姿をしています。好奇心いっぱいで、ベルや仲間たちに明るさを届けます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/gaston_beauty-and-the-beast_t_b6154ef3.jpeg?region=0%2C0%2C600%2C600" alt="ガストンの写真"></div><h3>ガストン</h3><p>町で人気のある力自慢の男です。自信家でベルに求婚しますが、相手の気持ちを考えないところが物語の対立を生みます。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="alice-title">
+      <h2 id="alice-title">不思議の国のアリス</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12450_12522_12473_208715e7.jpeg?region=0%2C0%2C800%2C800" alt="アリスの写真"></div><h3>アリス</h3><p>好奇心いっぱいの女の子です。不思議な世界でさまざまな出来事に出会いながら、自分らしく考えて進んでいきます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12510_12483_12488_12441_12495_1_098a79cc.jpeg?region=0%2C0%2C800%2C800" alt="マッドハッターの写真"></div><h3>マッドハッター</h3><p>お茶会で出会う個性的なキャラクターです。予想できない言葉や行動が多く、不思議の国らしい楽しさを表しています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12481_12455_12471_12515_29483_f706aba9.jpeg?region=0%2C0%2C800%2C800" alt="チェシャ猫の写真"></div><h3>チェシャ猫</h3><p>にやりと笑う顔が印象的なネコです。姿を消したり現れたりしながら、アリスを不思議な言葉で導きます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_30333_12358_12373_12365_12441_95aef70f.jpeg?region=0%2C0%2C800%2C800" alt="白うさぎの写真"></div><h3>白うさぎ</h3><p>時計を持って急いでいるうさぎです。アリスが不思議の国へ入るきっかけを作る、物語の始まりに欠かせない存在です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12495_12540_12488_12398_22899_2_a972b187.jpeg?region=0%2C0%2C800%2C800" alt="ハートの女王の写真"></div><h3>ハートの女王</h3><p>強い口調で周囲を従わせる女王です。気まぐれで怒りっぽく、不思議の国の混乱した雰囲気を象徴しています。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="frozen-title">
+      <h2 id="frozen-title">アナと雪の女王</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_elsa_795c95c3.jpeg?region=0%2C0%2C800%2C800" alt="エルサの写真"></div><h3>エルサ</h3><p>雪と氷の力を持つ女王です。自分の力を恐れながらも、ありのままの自分を受け入れていく姿が印象的です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_anna_fdaafae7.jpeg?region=0%2C0%2C800%2C800" alt="アナの写真"></div><h3>アナ</h3><p>明るく行動力のある妹です。姉エルサを信じて雪山へ向かい、姉妹の絆と本当の愛を物語の中心で示します。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_olaf_42b28a03.jpeg?region=0%2C0%2C800%2C800" alt="オラフの写真"></div><h3>オラフ</h3><p>エルサの魔法から生まれた雪だるまです。無邪気で前向きな性格で、物語に笑いと温かさを加えています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_kristoff_24151f3c.jpeg?region=0%2C0%2C800%2C800" alt="クリストフの写真"></div><h3>クリストフ</h3><p>山で暮らす氷売りの青年です。ぶっきらぼうに見えますが、アナを支える誠実さとやさしさを持っています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_sven_41d66b96.jpeg?region=0%2C0%2C800%2C800" alt="スヴェンの写真"></div><h3>スヴェン</h3><p>クリストフの相棒のトナカイです。言葉は話しませんが、表情や動きで気持ちを伝え、旅を楽しくしてくれます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_hans_74e60f55.jpeg?region=0%2C0%2C800%2C800" alt="ハンスの写真"></div><h3>ハンス</h3><p>南諸島から来た王子です。礼儀正しく見えますが、物語が進むにつれて意外な本心が明らかになります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/chara_trolls_04a542db.jpeg?region=0%2C0%2C800%2C800" alt="トロールたちの写真"></div><h3>トロールたち</h3><p>山に住む不思議な家族のような存在です。クリストフを大切にし、アナとエルサの問題にも関わります。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="tangled-title">
+      <h2 id="tangled-title">塔の上のラプンツェル</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/600x600_0b0dabbf.png?region=0%2C0%2C600%2C600" alt="ラプンツェルの写真"></div><h3>ラプンツェル</h3><p>長い魔法の髪を持つ少女です。外の世界へのあこがれを胸に、塔を出て自分の本当の物語を探し始めます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/2_600x600_aab5f5f2.png?region=0%2C0%2C600%2C600" alt="フリン・ライダーの写真"></div><h3>フリン・ライダー</h3><p>ラプンツェルと旅をする青年です。最初は軽い雰囲気ですが、冒険を通して本当のやさしさを見せていきます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/600x600_23724ade.png?region=0%2C0%2C600%2C600" alt="パスカルの写真"></div><h3>パスカル</h3><p>ラプンツェルの友だちのカメレオンです。小さな体ながら表情豊かで、彼女の気持ちに寄り添う大切な存在です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/600x600_d40c6530.png?region=0%2C0%2C600%2C600" alt="マキシマスの写真"></div><h3>マキシマス</h3><p>王国の警備隊にいる馬です。使命感が強く、フリンを追いかけますが、ラプンツェルとの旅で頼れる仲間になります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/600x600_e713a5ab.png?region=0%2C0%2C600%2C600" alt="マザー・ゴーテルの写真"></div><h3>マザー・ゴーテル</h3><p>ラプンツェルを塔に閉じ込めて育てた女性です。若さを保つために魔法の髪を利用しようとする、物語の重要な存在です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/600x600_03e8f489.png?region=0%2C0%2C600%2C600" alt="荒くれ者たちの写真"></div><h3>荒くれ者たち</h3><p>酒場に集まるこわそうな人たちです。見た目とは違って夢を持っており、ラプンツェルの冒険を楽しく盛り上げます。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="dumbo-title">
+      <h2 id="dumbo-title">ダンボ</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/dumbo_fc_dumbo_t_85e1fb99.jpeg?region=0%2C0%2C600%2C600" alt="ダンボの写真"></div><h3>ダンボ</h3><p>大きな耳を持つ子ゾウです。最初はからかわれてしまいますが、その耳が空を飛ぶ力となり、自分だけの魅力を見つけます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/timothy_fc_dumbo_t_d4ce31c7.jpeg?region=0%2C0%2C600%2C600" alt="ティモシーの写真"></div><h3>ティモシー</h3><p>ダンボを励ます小さな友だちです。自信をなくしたダンボに寄り添い、勇気を出すきっかけを作ります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/jumbo_fc_dumbo_t_5291d555.jpeg?region=0%2C0%2C600%2C600" alt="ジャンボ夫人の写真"></div><h3>ジャンボ夫人</h3><p>ダンボのお母さんです。子どもを守ろうとする強い愛情を持ち、ダンボの心の支えになっています。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="hercules-title">
+      <h2 id="hercules-title">ヘラクレス</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/hercules_fc_hercules_t_56ed3b89.jpeg?region=0%2C0%2C600%2C600" alt="ヘラクレスの写真"></div><h3>ヘラクレス</h3><p>強い力を持つ青年です。本当の英雄とは何かを探しながら、力だけではなく心の強さを学んでいきます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/megara_fc_hercules_t_97270752.jpeg?region=0%2C0%2C600%2C600" alt="メガラの写真"></div><h3>メガラ</h3><p>クールで大人っぽい雰囲気の女性です。皮肉っぽく見える一方で、心の奥には傷つきやすさとやさしさを持っています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/philoctetes_fc_hercules_t_ff97a3be.jpeg?region=0%2C0%2C600%2C600" alt="フィルの写真"></div><h3>フィル</h3><p>ヘラクレスを鍛えるトレーナーです。厳しい言葉もありますが、彼を本物の英雄へ導こうとする熱い気持ちがあります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/hades_fc_hercules_t_f318f154.jpeg?region=0%2C0%2C600%2C600" alt="ハデスの写真"></div><h3>ハデス</h3><p>冥界を支配するヴィランです。皮肉っぽい話し方と青い炎のような髪が印象的で、物語に強い個性を加えています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/zeus_fc_hercules_t_693c1243.jpeg?region=0%2C0%2C600%2C600" alt="ゼウスの写真"></div><h3>ゼウス</h3><p>ヘラクレスの父で、神々の王です。明るく大きな存在感があり、息子を見守る父親としての一面もあります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/pegasus_fc_hercules_t_65c0bca6.jpeg?region=0%2C0%2C600%2C600" alt="ペガサスの写真"></div><h3>ペガサス</h3><p>ヘラクレスの相棒である翼のある馬です。忠実で勇敢な性格で、ヘラクレスの冒険を支えます。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/pain_fc_hercules_t_b1298ef3.jpeg?region=0%2C0%2C600%2C600" alt="ペインとパニックの写真"></div><h3>ペインとパニック</h3><p>ハデスの手下の二人組です。変身が得意で、失敗しながらもハデスの計画を手伝うコミカルな存在です。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="inside-title">
+      <h2 id="inside-title">インサイド・ヘッド</h2>
+      <div class="character-rail">
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_294b28a0.jpeg?region=0%2C0%2C144%2C144" alt="ヨロコビの写真"></div><h3>ヨロコビ</h3><p>ライリーの心の中にいる感情のひとつです。前向きで明るく、楽しい思い出を守ろうと一生懸命に行動します。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_d421b6c3.jpeg?region=0%2C0%2C144%2C144" alt="カナシミの写真"></div><h3>カナシミ</h3><p>悲しみを表す感情です。最初はじゃまに見えることもありますが、心を癒やし、人とつながるために大切な役割を持っています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_94cba8a3.jpeg?region=0%2C0%2C144%2C144" alt="イカリの写真"></div><h3>イカリ</h3><p>怒りを表す感情です。強い反応で気持ちを守ろうとする存在で、コミカルな動きとまっすぐな性格が印象的です。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_f07b0c98.jpeg?region=0%2C0%2C144%2C144" alt="ビビリの写真"></div><h3>ビビリ</h3><p>危険を避けようとする感情です。心配性ですが、ライリーを守るために大切な役割を果たしています。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_0e6f16bf.jpeg?region=0%2C0%2C144%2C144" alt="ムカムカの写真"></div><h3>ムカムカ</h3><p>嫌なものを避ける感情です。強いこだわりやセンスがあり、ライリーの好みや反応に大きく関わります。</p></article>
+        <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_8c1f5319.jpeg?region=0%2C0%2C144%2C144" alt="ライリーの写真"></div><h3>ライリー</h3><p>物語の中心となる女の子です。引っ越しや環境の変化を通して、いろいろな感情と向き合っていきます。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>このページは学習用に作成した非公式の紹介ページです。</p>
+  </footer>
+</body>
+</html>

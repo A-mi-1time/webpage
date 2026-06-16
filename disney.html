@@ -199,31 +199,6 @@
       color: var(--blue);
     }
 
-    .jump-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .jump-links a {
-      padding: 7px 10px;
-      border: 1px solid #c8d6f3;
-      border-radius: 999px;
-      background: #f6f9ff;
-      color: var(--blue);
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-    }
-
-    .jump-links a:hover {
-      border-color: var(--blue);
-      background: #eaf1ff;
-      transform: translateY(-2px);
-    }
-
     .mini-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1124,15 +1099,7 @@
               <strong>会える場所</strong>
               東京ディズニーランドの「ミッキーの家とミート・ミッキー」や、東京ディズニーシーの「ミッキー＆フレンズ・グリーティングトレイル」などで会えることがあります。
             </p>
-            <nav class="jump-links" aria-label="ミッキー＆フレンズの個別紹介">
-              <a href="#mickey">ミッキー</a>
-              <a href="#minnie">ミニー</a>
-              <a href="#donald">ドナルド</a>
-              <a href="#daisy">デイジー</a>
-              <a href="#goofy">グーフィー</a>
-              <a href="#pluto">プルート</a>
-              <a href="#chip-dale">チップとデール</a>
-            </nav>
+            <a class="official-link" href="characters.html">キャラクター個別紹介を見る</a>
             <p class="credit">
               Photo:
               <a href="https://mezzomiki.jp/post-182987/d6h_1791/" target="_blank" rel="noopener noreferrer">
@@ -1159,15 +1126,7 @@
               <strong>会える場所</strong>
               東京ディズニーシーの「ヴィレッジ・グリーティングプレイス」や「サルードス・アミーゴス！グリーティングドック」などで、ダッフィーや仲間に会えることがあります。
             </p>
-            <nav class="jump-links" aria-label="ダッフィー＆フレンズの個別紹介">
-              <a href="#duffy">ダッフィー</a>
-              <a href="#shelliemay">シェリーメイ</a>
-              <a href="#gelatoni">ジェラトーニ</a>
-              <a href="#stellalou">ステラ・ルー</a>
-              <a href="#cookieann">クッキー・アン</a>
-              <a href="#olumel">オル・メル</a>
-              <a href="#linabell">リーナ・ベル</a>
-            </nav>
+            <a class="official-link" href="characters.html">キャラクター個別紹介を見る</a>
             <p class="credit">
               Photo:
               <a href="https://asset.watch.impress.co.jp/img/trw/docs/1513/603/18_l.jpg" target="_blank" rel="noopener noreferrer">
@@ -1248,82 +1207,6 @@
           <a class="official-link" href="https://www.disneylorcana.com/" target="_blank" rel="noopener noreferrer">
             公式ページを開く
           </a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="character-detail-title">
-      <h2 id="character-detail-title">キャラクター個別紹介</h2>
-      <div class="mini-grid">
-        <article class="mini-card" id="mickey">
-          <img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12511_12483_12461_12540_12510_1_1cac8481.jpeg?region=0,0,800,800" alt="ミッキーマウスの写真">
-          <h3>ミッキー</h3>
-          <p>前向きでリーダーシップのある、ディズニーを代表するキャラクターです。</p>
-        </article>
-        <article class="mini-card" id="minnie">
-          <img src="https://lumiere-a.akamaihd.net/v1/images/12461_12515_12521_thumb_12511_12491_12540_12510_12454_1_094c88a1.jpeg" alt="ミニーマウスの写真">
-          <h3>ミニー</h3>
-          <p>おしゃれでやさしく、リボンやドット柄のスタイルが印象的です。</p>
-        </article>
-        <article class="mini-card" id="donald">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl4Oy5gvx8thlQ22SocKDeXd7XODpYi-zE4RYjmZ8-Zg&s=10" alt="ドナルドダックの写真">
-          <h3>ドナルド</h3>
-          <p>短気だけれど憎めない性格で、にぎやかなリアクションが魅力です。</p>
-        </article>
-        <article class="mini-card" id="daisy">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr20ErJNx2K_hLum4oDIgtJGQrsn43D8Z8OGInfKBYFg&s=10" alt="デイジーダックの写真">
-          <h3>デイジー</h3>
-          <p>華やかで自信があり、ドナルドのガールフレンドとしても知られています。</p>
-        </article>
-        <article class="mini-card" id="goofy">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkpxK0TtsjyUOWn0LXLOuVetS2QW1T7lX-Pa4IzgMKSA&s=10" alt="グーフィーの写真">
-          <h3>グーフィー</h3>
-          <p>のんびりしていて少しおっちょこちょいな、明るい友だちです。</p>
-        </article>
-        <article class="mini-card" id="pluto">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPFRaT6SX48mgSXt3wSLytMHG0IMdljNAIAIZsDac6_w&s=10" alt="プルートの写真">
-          <h3>プルート</h3>
-          <p>ミッキーの愛犬。言葉を話さず、表情や動きで気持ちを伝えます。</p>
-        </article>
-        <article class="mini-card" id="chip-dale">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd9lwXo_py0ooZpBa4btrSDpxaBkCXnh8x8sDW4dtEQX8w5u5a288VONttsSwWKNECi-8xGXD8ijlw71w1lFlJWVwZVLLPQT3eZN7UrGcv&s=10" alt="チップとデールの写真">
-          <h3>チップとデール</h3>
-          <p>いたずら好きなシマリスのコンビ。チップはしっかり者、デールは陽気でおちゃめな性格です。</p>
-        </article>
-        <article class="mini-card" id="duffy">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQltv2IOHL9gHXZEGZrU36bXQXm56ZbF8VuAptUscpFoQ&s=10" alt="ダッフィーの写真">
-          <h3>ダッフィー</h3>
-          <p>ミニーがミッキーのために作ったテディベア。旅のおともとして親しまれています。</p>
-        </article>
-        <article class="mini-card" id="shelliemay">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyH9dsdXmwOmwggDvQFvo9TVXTBqQd8CeX3l5y5eZzYg&s=10" alt="シェリーメイの写真">
-          <h3>シェリーメイ</h3>
-          <p>ミニーが作った女の子のテディベア。ダッフィーの大切な友だちです。</p>
-        </article>
-        <article class="mini-card" id="gelatoni">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFAPvAR80QJX45kDq8ZZUiIMidBnSuAkzNekWtt2v92A&s=10" alt="ジェラトーニの写真">
-          <h3>ジェラトーニ</h3>
-          <p>絵を描くことが好きなネコの男の子。アートで気持ちを表現します。</p>
-        </article>
-        <article class="mini-card" id="stellalou">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2-TZldo6L-znWnkNTSL1Lqi-MnnNgBBfwp7EB-gyp4A&s=10" alt="ステラ・ルーの写真">
-          <h3>ステラ・ルー</h3>
-          <p>ダンサーを夢見るうさぎの女の子。努力家で夢に向かって進みます。</p>
-        </article>
-        <article class="mini-card" id="cookieann">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UK2qJEjK3J4gjVzLs_HeBgCvxVCwJyPrTiZsAERzjw&s=10" alt="クッキー・アンの写真">
-          <h3>クッキー・アン</h3>
-          <p>料理やアイデア作りが得意な犬の女の子。楽しい発想が魅力です。</p>
-        </article>
-        <article class="mini-card" id="olumel">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXDANXLyQmLB3DVgDG0GDHrpIfTjJkMmglLn2VhaD1A&s=10" alt="オル・メルの写真">
-          <h3>オル・メル</h3>
-          <p>音楽が好きなカメの男の子。ウクレレで明るい気分を届けます。</p>
-        </article>
-        <article class="mini-card" id="linabell">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCHl7Yvz0srCXL1ChV3kvHMC0YTtoHP9gTX3eJfvA8KA&s=10" alt="リーナ・ベルの写真">
-          <h3>リーナ・ベル</h3>
-          <p>謎を解くのが得意なキツネの女の子。虫めがねを持った探偵のような存在です。</p>
         </article>
       </div>
     </section>
