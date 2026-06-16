@@ -115,6 +115,42 @@
       transform: translateY(-4px);
     }
 
+    .experience-item {
+      width: min(86vw, 420px);
+      min-width: min(86vw, 420px);
+    }
+
+    .experience-visual {
+      aspect-ratio: 16 / 9;
+      padding: 18px;
+      align-content: end;
+      justify-items: start;
+      text-align: left;
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+
+    .experience-visual span {
+      display: inline-block;
+      max-width: 100%;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgb(255 255 255 / 82%);
+      color: #5d3152;
+    }
+
+    .experience-meta {
+      margin: 10px 0 8px;
+      color: var(--pink);
+      font-weight: 800;
+    }
+
+    .characters {
+      margin-top: 10px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
     .portrait {
       width: 100%;
       aspect-ratio: 1 / 1;
@@ -165,6 +201,11 @@
       .character-item {
         width: 280px;
         min-width: 280px;
+      }
+
+      .experience-item {
+        width: 390px;
+        min-width: 390px;
       }
     }
   </style>
@@ -330,6 +371,67 @@
         <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_f07b0c98.jpeg?region=0%2C0%2C144%2C144" alt="ビビリの写真"></div><h3>ビビリ</h3><p>危険を避けようとする感情です。心配性ですが、ライリーを守るために大切な役割を果たしています。</p></article>
         <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_0e6f16bf.jpeg?region=0%2C0%2C144%2C144" alt="ムカムカの写真"></div><h3>ムカムカ</h3><p>嫌なものを避ける感情です。強いこだわりやセンスがあり、ライリーの好みや反応に大きく関わります。</p></article>
         <article class="character-item"><div class="portrait"><img src="https://lumiere-a.akamaihd.net/v1/images/12452_12531_12469_12452_12489_12539_12504_12483_12489_6_8c1f5319.jpeg?region=0%2C0%2C144%2C144" alt="ライリーの写真"></div><h3>ライリー</h3><p>物語の中心となる女の子です。引っ越しや環境の変化を通して、いろいろな感情と向き合っていきます。</p></article>
+      </div>
+    </section>
+
+    <section class="series" aria-labelledby="experience-title">
+      <h2 id="experience-title">アトラクション・ショー紹介</h2>
+      <div class="character-rail">
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>ミッキーのフィルハーマジック</span></div>
+          <h3>ディズニー音楽をめぐる3Dシアター</h3>
+          <p class="experience-meta">東京ディズニーランド / アトラクション</p>
+          <p>ドナルドが魔法の帽子をきっかけに、ディズニー映画の名曲の世界へ入り込んでしまうシアタータイプのアトラクションです。映像、音楽、立体感のある演出で、いろいろな作品を一度に楽しめます。</p>
+          <p class="characters">主な登場・関連キャラクター: ミッキー、ドナルド、アリエル、アラジン、ジャスミン、シンバ、ピーター・パンなど</p>
+        </article>
+
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>ミッキーのマジカルミュージックワールド</span></div>
+          <h3>音楽でつながるステージショー</h3>
+          <p class="experience-meta">東京ディズニーランド / ショー</p>
+          <p>ミッキーたちが音楽の力に導かれ、ディズニーの仲間たちと出会っていくライブエンターテイメントです。歌、ダンス、舞台演出が大きな魅力で、キャラクターの登場シーンも華やかです。</p>
+          <p class="characters">主な登場・関連キャラクター: ミッキー、ミニー、ドナルド、グーフィー、チップとデール、ディズニープリンセスなど</p>
+        </article>
+
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>美女と野獣<br>まほうのものがたり</span></div>
+          <h3>映画の名場面を進むライド</h3>
+          <p class="experience-meta">東京ディズニーランド / アトラクション</p>
+          <p>魔法のカップに乗って、『美女と野獣』の物語をたどるライド型アトラクションです。ベルと野獣の出会い、城の仲間たち、舞踏会のような場面など、映画の世界に入り込むように楽しめます。</p>
+          <p class="characters">主な登場・関連キャラクター: ベル、野獣、ルミエール、コグスワース、ポット夫人、チップ、ガストン</p>
+        </article>
+
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>アナとエルサの<br>フローズンジャーニー</span></div>
+          <h3>姉妹の物語をたどるボートライド</h3>
+          <p class="experience-meta">東京ディズニーシー / アトラクション</p>
+          <p>『アナと雪の女王』の世界をボートに乗ってめぐるアトラクションです。アレンデールの景色、雪と氷の演出、映画の音楽を通して、アナとエルサの姉妹の絆を体験できます。</p>
+          <p class="characters">主な登場・関連キャラクター: アナ、エルサ、オラフ、クリストフ、スヴェン、ハンス</p>
+        </article>
+
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>ラプンツェルの<br>ランタンフェスティバル</span></div>
+          <h3>ランタンの夜をめぐるボートライド</h3>
+          <p class="experience-meta">東京ディズニーシー / アトラクション</p>
+          <p>『塔の上のラプンツェル』のロマンチックな世界をボートで進むアトラクションです。ラプンツェルが塔を出て、フリンとともにランタンの光に包まれる場面を中心に楽しめます。</p>
+          <p class="characters">主な登場・関連キャラクター: ラプンツェル、フリン・ライダー、パスカル、マキシマス、マザー・ゴーテル</p>
+        </article>
+
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>Reach for the Stars</span></div>
+          <h3>夜のシンデレラ城を使ったショー</h3>
+          <p class="experience-meta">東京ディズニーランド / ナイトエンターテイメント</p>
+          <p>シンデレラ城を舞台に、映像や光、音楽、特殊効果でディズニーの物語を描く夜のショーです。空へ手を伸ばすような前向きなテーマで、さまざまな作品のキャラクターが登場します。</p>
+          <p class="characters">主な登場・関連キャラクター: ミッキー、ミニー、プリンセス、ベイマックス、ヘラクレス、ディズニー映画の仲間たち</p>
+        </article>
+
+        <article class="character-item experience-item">
+          <div class="portrait experience-visual"><span>ビリーヴ！<br>シー・オブ・ドリームス</span></div>
+          <h3>メディテレーニアンハーバーの夜のショー</h3>
+          <p class="experience-meta">東京ディズニーシー / ナイトエンターテイメント</p>
+          <p>東京ディズニーシーの水上で行われる大規模なナイトショーです。船、映像、光、炎、音楽が重なり、夢を信じる気持ちをテーマにしたディズニーの物語が広がります。</p>
+          <p class="characters">主な登場・関連キャラクター: ミッキー、ミニー、ピーター・パン、エルサ、アナ、ラプンツェル、モアナなど</p>
+        </article>
       </div>
     </section>
   </main>
